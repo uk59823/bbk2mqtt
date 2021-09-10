@@ -1,0 +1,6 @@
+paho-mqtt
+requests
+configparser
+simplejson
+datetime
+urllib3
