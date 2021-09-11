@@ -289,8 +289,8 @@ def readMowas(ags_lk):
     if loglevel == "DEBUG":
         print("Sending MQTT")
 
-    print(dt + " - Sending JSON using Paho-Client with Broker '{}' to Topic '{}' for '{}'".format(
-        mqtt_ipaddress, mqtt_topic, ags_lk[1]))
+    print(dt + " - Sending JSON to Topic '{}' for '{}'".format(
+        mqtt_topic, ags_lk[1]))
     send_mqtt_paho(dt, mqtt_topic + '/' + ags_lk[0] + "/update")
     send_mqtt_paho(len(JSONreturn), mqtt_topic + '/' + ags_lk[0] + "/count")
     send_mqtt_paho(ags_lk[1], mqtt_topic + '/' + ags_lk[0] + "/county")
@@ -301,6 +301,7 @@ def readMowas(ags_lk):
 
 
 if __name__ == '__main__':
+    print('bbk2mqtt started')
     while 1:
         readIniSettings()
         dtStart = datetime.datetime.now()
